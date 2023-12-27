@@ -9,7 +9,8 @@ export default (posts = [], action) => {
     case CREATE:
       return [...posts, action.payload];
     case UPDATE:
-      return posts.map((post) => (post._id === action.payload._id ? action.payload : post));
+      // console.log("action:-",action.paylo
+      return posts.map((post,index) => (post._id === action.payload._id ?posts[index]= action.payload : post));
     case DELETE:
       return posts.filter((post) => post._id !== action.payload);
     default:

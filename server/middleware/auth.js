@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const secret = process.env.SECRET;
+const secret = 'test';
 
 const auth = async (req, res, next) => {
   try {
@@ -13,9 +13,13 @@ const auth = async (req, res, next) => {
 
     if (token && isCustomAuth) {  // normal signin
       decodedData = jwt.verify(token, secret);
+      console.log("userId:-",decodedData)
+      
       req.userId = decodedData?.id;
     } else {  // This is google signin
       decodedData = jwt.decode(token);
+      console.log("googlen login:-",decodedData)
+
       req.userId = decodedData?.sub;
     }    
 

@@ -56,7 +56,7 @@ const SignUp = () => {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   return (
-    <GoogleOAuthProvider clientId="128507865323-vhp1b0qjvafff4p7iab34v8p0b555lqq.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="899710456726-4tti0j1cn33oem48vuqp22fusl8s7nhg.apps.googleusercontent.com">
       <Container component="main" maxWidth="xs">
         <StyledPaper elevation={3}>
           <StyledAvatar>

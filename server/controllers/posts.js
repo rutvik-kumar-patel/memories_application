@@ -35,7 +35,7 @@ export const createPost = async (req, res) => {
     
     try {
         await newPostMessage.save();
-        console.log("cre,controller:-",newPostMessage)
+        // console.log("cre,controller:-",newPostMessage)
         res.status(201).json(newPostMessage );
     } catch (error) {
         res.status(409).json({ message: error.message });
@@ -52,7 +52,7 @@ export const updatePost = async (req, res) => {
     
     const update = await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
     
-    console.log("upd,controller:-",update)
+    // console.log("upd,controller:-",update)
     res.json(update);
 }
 

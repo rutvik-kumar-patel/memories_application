@@ -13,8 +13,7 @@ const auth = async (req, res, next) => {
 
     if (token && isCustomAuth) {  // normal signin
       decodedData = jwt.verify(token, secret);
-      console.log("userId:-",decodedData)
-      
+      // console.log("userId:-",decodedData)
       req.userId = decodedData?.id;
     } else {  // This is google signin
       decodedData = jwt.decode(token);
@@ -22,7 +21,6 @@ const auth = async (req, res, next) => {
 
       req.userId = decodedData?.sub;
     }    
-
     next();
   } catch (error) {
     console.log(error);

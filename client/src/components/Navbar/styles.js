@@ -1,43 +1,50 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { deepPurple } from '@material-ui/core/colors';
+import { styled } from "@mui/material/styles";
+import { AppBar, Typography, Toolbar, Avatar } from "@mui/material";
+import { deepPurple } from "@mui/material/colors";
 
-export default makeStyles((theme) => ({
-  appBar: {
-    borderRadius: 15,
-    margin: '30px 0',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px 50px',
-  },
-  heading: {
-    color: 'rgba(0,183,255, 1)',
-    textDecoration: 'none',
-  },
-  image: {
-    marginLeft: '15px',
-  },
-  toolbar: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '400px',
-  },
-  profile: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '350px',
-  },
-  userName: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  brandContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
+// ✅ Styled Components for MUI v5
+export const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  borderRadius: 15,
+  margin: "30px 0",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  padding: "10px 50px",
+}));
+
+export const Heading = styled(Typography)({
+  color: "rgba(0,183,255, 1)",
+  textDecoration: "none",
+});
+
+export const Image = styled("img")({
+  marginLeft: "15px",
+});
+
+export const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "flex-end",
+  width: "400px",
+});
+
+export const ProfileContainer = styled("div")({
+  display: "flex",
+  justifyContent: "space-between",
+  width: "350px",
+});
+
+export const UserName = styled(Typography)({
+  display: "flex",
+  alignItems: "center",
+});
+
+export const BrandContainer = styled("div")({
+  display: "flex",
+  alignItems: "center",
+});
+
+export const PurpleAvatar = styled(Avatar)(({ theme }) => ({
+  color: theme.palette.getContrastText(deepPurple[500]),
+  backgroundColor: deepPurple[500],
 }));
